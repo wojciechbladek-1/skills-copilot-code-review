@@ -5,15 +5,25 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Mergington WebApp",
+      "name": "Python: FastAPI (uvicorn)",
       "type": "debugpy",
       "request": "launch",
       "module": "uvicorn",
+      "cwd": "${workspaceFolder}",
       "args": [
         "src.app:app",
-        "--reload"
+        "--reload",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
       ],
-      "jinja": true
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "jinja": true,
+      "console": "integratedTerminal",
+      "justMyCode": true
     }
   ]
 }
